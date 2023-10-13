@@ -1,0 +1,10 @@
+.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.equals {
+  grid-column: span 2;
+}

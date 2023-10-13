@@ -1,10 +1,9 @@
 import React from "react";
-import Note from "./Note";
 import { Link as RouteLink } from "react-router-dom";
-
-// import { Link as MuiLink } from "@mui/material";
 import { Button } from "@mui/material";
 import styled from "styled-components";
+import { useContext } from "react";
+import { CalculatorContext } from "../context/ForContext";
 
 const Container = styled.div`
   display: flex;
@@ -33,15 +32,16 @@ const Consumption = styled.div`
 `;
 
 const Home = () => {
+  const { result } = useContext(CalculatorContext);
   return (
     <>
       <Container>
         <h1>記帳本</h1>
         <h2>2023 / 10 / 11</h2>
-        <p>本月：$$$</p>
+        <p>本月：{result}</p>
         <Statistics>
-          <Income>收入{"[顯示金額]"}</Income>
-          <Consumption>支付{"[顯示金額]"}</Consumption>
+          <Income>當月收入{"[顯示金額]"}</Income>
+          <Consumption>當月支付{"[顯示金額]"}</Consumption>
         </Statistics>
         <RouteLink to="/note">
           <Button

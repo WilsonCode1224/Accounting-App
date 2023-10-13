@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouteLink } from "react-router-dom";
 import { Button } from "@mui/material";
+import Calculator from "./Calculator";
 const Note = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const Note = () => {
           Go back.
         </Button>
       </RouteLink>
+      <Calculator />
     </>
   );
 };
